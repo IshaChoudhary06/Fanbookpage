@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Book Site</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #090631;
+            color: #f2f8f2;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #df6ae5;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #961091;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #9d2269;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #112562;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            height: 50vh;
+            background: url('https://getwallpapers.com/wallpaper/full/0/6/4/344508.jpg') no-repeat center center/cover;
+            display: flex;
+            color: #f4e8e8;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            background-color: #0a0a0b;
+            border-radius: 50px;
+            height: 25vh;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #0d4d6c;
+            background-color: #b011be;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+            border: thick;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+
+        .cta:hover {
+            background-color: #440a59;
+        }
+
+        .community {
+            padding: 60px 20px;
+            background-color: #f9f3f9;
+            text-align: center;
+        }
+
+        .community .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 40vh;
+        }
+
+        .community h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .community p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .community-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .community-card {
+            background-color: #0d034a;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(82, 10, 10, 0.1);
+            max-width: 300px;
+            flex: 1;
+            text-align: left;
+            color: #f2f8f2;
+
+        }
+
+        .community-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .community-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #1b7097;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .nav-active {
+                display: flex;
+            }
+
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .toggle .line2 {
+                opacity: 0;
+            }
+
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .community-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+            });
+        });
+
+    </script>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"> ̷F̷a̷n̷d̷o̷m̷T̷a̷l̷e̷s</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Fandom Tales!</h1>
+            <a href="#" class="cta">Join the Community</a>
+        </div>
+    </section>
+
+    <section class="community">
+        <div class="container">
+            <h2>Join Us!</h2>
+            <p>Connect with other fans, share your thoughts, and participate in events.</p>
+            <div class="community-links">
+                <div class="community-card">
+                    <h3>Forums</h3>
+                    <p>Join discussions and share your insights with fellow fans.</p>
+                    <a href="#" class="cta">Visit Forums</a>
+                </div>
+                <div class="community-card">
+                    <h3>Social Media</h3>
+                    <p>Follow us on social media for the latest updates and fan interactions.</p>
+                    <a href="#" class="cta">Follow Us</a>
+                </div>
+                <div class="community-card">
+                    <h3>Events</h3>
+                    <p>Participate in online and offline events with the fan community.</p>
+                    <a href="#" class="cta">See Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
